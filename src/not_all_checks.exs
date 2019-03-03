@@ -26,15 +26,3 @@ defmodule Third do
 
   matcher(["a", :b, "c"])
 end
-
-from(s in Suite,
-      join: r in Reservation,
-      on:
-s.id == r.suite_id,
-      where: r.public_token == ^public_token,
-      prelo
-ad: [
-        :address,
-        :photos
-      ]
-    )
